@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class thing extends Actor
 {
-     GreenfootImage myImage = getImage();
-     String[] imageNames = {"runningtoleft0.png","runningtoleft1.png", "running to left2.png"};
-  
+    GreenfootImage myImage = getImage();
+    String[] imageNames = {"runningtoleft0.png","runningtoleft1.png", "running to left2.png"};
+
     private int currentImage=0;
     int xPos;
     int yPos;
@@ -36,52 +36,52 @@ public class thing extends Actor
     public void animateWalkingLeft()
     {
         if(frame == 0) {setImage("runningtoleft0.png");
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);}
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);}
         else if(frame == 5) {setImage("runningtoleft1.png");
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);}
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);}
         else if(frame == 10) {setImage("running to left2.png");
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);
-    }
-    else if(frame == 15)
-    {
-        frame = 0;
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);
+        }
+        else if(frame == 15)
+        {
+            frame = 0;
             return;
-    }
-     
+        }
+
         frame++;
-       
+
     }
-     public void animateWalkingRight()
+
+    public void animateWalkingRight()
     {
         if(frame == 0) {setImage("Layer 1_runningright1.png");
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);}
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);}
         else if(frame == 5) {setImage("Layer 1_runningright2.png");
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);}
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);}
         else if(frame == 10) {setImage("Layer 1_runningright3.png");
-        GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);
-    }
-    else if(frame == 15)
-    {
-        frame = 0;
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);
+        }
+        else if(frame == 15)
+        {
+            frame = 0;
             return;
-    }
-     
+        }
+
         frame++;
-       
+
     }
-    
 
     public void addedToWorld(World myWorld)
     {
@@ -96,49 +96,49 @@ public class thing extends Actor
      */
     public void act() 
     {
-        
+
         int attime=0;
-    
-      Actor platformToRight = getOneObjectAtOffset(sideWidth+5, 0, Brick.class);
+
+        Actor platformToRight = getOneObjectAtOffset(sideWidth+5, 0, Brick.class);
         Actor platformToLeft = getOneObjectAtOffset(-(sideWidth+5), 0, Brick.class);
         if(inTheAir)
         {
             fall();
-              if(Greenfoot.isKeyDown("left"))
-           {
-            run("left");
-           } else if (Greenfoot.isKeyDown("right"))
-          {
-            run("right");
-       
+            if(Greenfoot.isKeyDown("left"))
+            {
+                run("left");
+            } else if (Greenfoot.isKeyDown("right"))
+            {
+                run("right");
+
             }
-           if(platformToRight!=null)
-           {
-           stop();
+            if(platformToRight!=null)
+            {
+                stop();
             }
-           if(platformToLeft!=null)
-          {
-            stop();
-           }
+            if(platformToLeft!=null)
+            {
+                stop();
+            }
         } else {
             getCommand();
         }
-        
+
         move();
-       if(right==0&&left==1&&isNotPressed)
-           {
-        setImage("Layer 1_sprite11111_1.png");
-              GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);
-    }
-     if(right==1&&left==0&&isNotPressed)
-           {
-        setImage("Layer 1_sprite11111_2.png");
-              GreenfootImage image = getImage();
-        image.scale(image.getWidth() +30, image.getHeight()+30);
-        setImage(image);
-    }
+        if(right==0&&left==1&&isNotPressed)
+        {
+            setImage("Layer 1_sprite11111_1.png");
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);
+        }
+        if(right==1&&left==0&&isNotPressed)
+        {
+            setImage("Layer 1_sprite11111_2.png");
+            GreenfootImage image = getImage();
+            image.scale(image.getWidth() +30, image.getHeight()+30);
+            setImage(image);
+        }
     }    
 
     private void run (String direction)
@@ -158,12 +158,12 @@ public class thing extends Actor
     {
         deltaY += jumpHeight;
         inTheAir = true;
-         
+
         if(Greenfoot.isKeyDown("down"))
         {
             deltaY -= 100;
         }
-        
+
     }
 
     /*
@@ -173,7 +173,7 @@ public class thing extends Actor
     private void fall()
     {
         deltaY-=fallSpeed;
-        
+
     }
 
     private void move()
@@ -210,7 +210,7 @@ public class thing extends Actor
             if(deltaY>0)
             {
                 deltaY=0;
-                
+
                 GreenfootImage platformImage = platformAbove.getImage();
                 int bottomOfPlatform = platformAbove.getY() + platformImage.getHeight()/2;
                 newY = bottomOfPlatform + groundHeight;
@@ -219,7 +219,7 @@ public class thing extends Actor
         if(getX()<=sideWidth)
         {
             deltaX = Math.abs(deltaX);
-            
+
         }
         if(getX()>=worldWidth-sideWidth)
         {
@@ -229,60 +229,60 @@ public class thing extends Actor
         if(platformToRight!=null)
         {
             deltaX = Math.abs(deltaX) * -1;
-         
+
         }
         if(platformToLeft!=null)
         {
             deltaX = Math.abs(deltaX);
-          
+
         }
         setLocation((int)newX,(int)newY);
     }
-int left;
-int right;
-boolean isNotPressed;
-boolean bb=false;
+    int left;
+    int right;
+    boolean isNotPressed;
+    boolean bb=false;
     private void getCommand()
     {
         int attime =0;
-         
+
         Actor platformToRight = getOneObjectAtOffset(sideWidth+5, 0, Brick.class);
         Actor platformToLeft = getOneObjectAtOffset(-(sideWidth+5), 0, Brick.class);
         if(Greenfoot.isKeyDown("left")&& platformToLeft == null )
         {
             run("left");
-                animateWalkingLeft();
-           
+            animateWalkingLeft();
+
             left=1;
             right=0;
-             isNotPressed=false;
-             bb=false;
+            isNotPressed=false;
+            bb=false;
         } else if (Greenfoot.isKeyDown("right")&& platformToRight == null)
         {
             run("right");
             animateWalkingRight();
             left=0;
             right=1;
-             isNotPressed=false;
-             bb=false;
+            isNotPressed=false;
+            bb=false;
         }
         else if(Greenfoot.isKeyDown("space"))
         {
-            
+
         }
         else 
         {
             stop();
             isNotPressed=true;
-           bb=false;
+            bb=false;
         }
-      
+
         if(Greenfoot.isKeyDown("up"))
         {
             jump();
             bb=true;
         }
-        
+
     }
 
 }
