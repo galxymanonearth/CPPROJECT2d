@@ -26,8 +26,15 @@ public class thing extends Actor
     private World myWorld;
     int worldHeight;
     int worldWidth;
-    public thing()
+    public thing(int horz, int vert)
     {
+        GreenfootImage image = getImage();
+        image.scale(image.getWidth() +30, image.getHeight()+30);
+        setImage(image);
+        xPos = horz;
+        yPos = vert;
+    }
+    public thing(){
         GreenfootImage image = getImage();
         image.scale(image.getWidth() +30, image.getHeight()+30);
         setImage(image);
@@ -35,23 +42,31 @@ public class thing extends Actor
     private int frame;
     public void animateWalkingLeft()
     {
-        if(frame == 0) {setImage("runningtoleft0.png");
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth() +30, image.getHeight()+30);
-            setImage(image);}
-        else if(frame == 5) {setImage("runningtoleft1.png");
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth() +30, image.getHeight()+30);
-            setImage(image);}
-        else if(frame == 10) {setImage("running to left2.png");
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth() +30, image.getHeight()+30);
-            setImage(image);
-        }
-        else if(frame == 15)
-        {
-            frame = 0;
-            return;
+        switch (frame) {
+            case 0: {
+                setImage("runningtoleft0.png");
+                GreenfootImage image = getImage();
+                image.scale(image.getWidth() + 30, image.getHeight() + 30);
+                setImage(image);
+                break;
+            }
+            case 5: {
+                setImage("runningtoleft1.png");
+                GreenfootImage image = getImage();
+                image.scale(image.getWidth() + 30, image.getHeight() + 30);
+                setImage(image);
+                break;
+            }
+            case 10: {
+                setImage("running to left2.png");
+                GreenfootImage image = getImage();
+                image.scale(image.getWidth() + 30, image.getHeight() + 30);
+                setImage(image);
+                break;
+            }
+            case 15:
+                frame = 0;
+                return;
         }
 
         frame++;
@@ -60,23 +75,31 @@ public class thing extends Actor
 
     public void animateWalkingRight()
     {
-        if(frame == 0) {setImage("Layer 1_runningright1.png");
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth() +30, image.getHeight()+30);
-            setImage(image);}
-        else if(frame == 5) {setImage("Layer 1_runningright2.png");
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth() +30, image.getHeight()+30);
-            setImage(image);}
-        else if(frame == 10) {setImage("Layer 1_runningright3.png");
-            GreenfootImage image = getImage();
-            image.scale(image.getWidth() +30, image.getHeight()+30);
-            setImage(image);
-        }
-        else if(frame == 15)
-        {
-            frame = 0;
-            return;
+        switch (frame) {
+            case 0: {
+                setImage("Layer 1_runningright1.png");
+                GreenfootImage image = getImage();
+                image.scale(image.getWidth() + 30, image.getHeight() + 30);
+                setImage(image);
+                break;
+            }
+            case 5: {
+                setImage("Layer 1_runningright2.png");
+                GreenfootImage image = getImage();
+                image.scale(image.getWidth() + 30, image.getHeight() + 30);
+                setImage(image);
+                break;
+            }
+            case 10: {
+                setImage("Layer 1_runningright3.png");
+                GreenfootImage image = getImage();
+                image.scale(image.getWidth() + 30, image.getHeight() + 30);
+                setImage(image);
+                break;
+            }
+            case 15:
+                frame = 0;
+                return;
         }
 
         frame++;
