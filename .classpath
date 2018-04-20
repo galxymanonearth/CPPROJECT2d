@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="/CPPROJECT2d/Way to Go"/>
+	<classpathentry kind="src" path="/Game"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/bluej"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/greenfoot"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
