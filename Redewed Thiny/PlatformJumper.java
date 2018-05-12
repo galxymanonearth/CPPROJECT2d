@@ -245,7 +245,7 @@ public class PlatformJumper extends Actor
         }
         setLocation((int)newX,(int)newY);
     }
-     int left;
+    int left;
     int right;
     boolean isNotPressed;
     boolean bb=false;

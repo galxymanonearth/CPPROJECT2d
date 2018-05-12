@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="bluej">
+    <archive path="E:/Documents/GitHub/CPPROJECT2d/Way to Go/bluej.jar" />
+  </library>
+  <library name="greenfoot">
+    <archive path="E:/Documents/GitHub/CPPROJECT2d/Way to Go/greenfoot.jar" />
+  </library>
+</eclipse-userlibraries>
+
