@@ -108,15 +108,18 @@ public class PlatformJumper extends Actor
      */
     public void act() 
     {
-          Actor platformBelow = getOneObjectAtOffset(0, groundHeight + 5, Platform.class);
+         Actor platformBelow = getOneObjectAtOffset(0, groundHeight + 5, Platform.class);
         Actor platformAbove = getOneObjectAtOffset(0, -(groundHeight + 5), Platform.class);
         Actor platformToRight = getOneObjectAtOffset(sideWidth+5, 0, Platform.class);
         Actor platformToLeft = getOneObjectAtOffset(-(sideWidth+5), 0, Platform.class);
-          if(platformBelow == null&&!inTheAir)
+        if(getY() < 30)
+           Greenfoot.setWorld(new EndGame());
+        if(platformBelow == null&&!inTheAir)
         {
-
             fall();
         }
+        if(Greenfoot.isKeyDown("r"))
+            Greenfoot.setWorld(new PlatformWorld());
          if(inTheAir)
         {
             fall();

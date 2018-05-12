@@ -37,7 +37,7 @@ public class PlatformWorld extends World
         for(int i = 0; i < 32; i++){
             addObject(platforms[i], r.nextInt(800), r.nextInt(600));
         }
-        
-        
+        PlatformJumper broken = new PlatformJumper();
+        addObject(broken, 50+r.nextInt(700),580 );
     }
 }
