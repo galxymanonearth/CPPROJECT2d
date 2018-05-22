@@ -20,13 +20,13 @@ public class StartGame extends World
         Actor starter = new Actor(){
                 public void act() 
                 {
-                    setImage(new GreenfootImage("Press \"Enter\" to Start", 50, Color.WHITE, Color.BLACK));
+                    setImage(new GreenfootImage("Press \"Enter\" to Start", 50, java.awt.Color.WHITE, java.awt.Color.BLACK));
                 }
             };
             Actor restarter = new Actor(){
                 public void act() 
                 {
-                    setImage(new GreenfootImage("Press \"R\" to reset", 25, Color.WHITE, Color.BLACK));
+                    setImage(new GreenfootImage("Press \"R\" to reset Press \"k\" to kill yourself ", 25, java.awt.Color.WHITE, java.awt.Color.BLACK));
                 }
             };
             addObject(starter,400,300);

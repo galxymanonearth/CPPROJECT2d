@@ -23,7 +23,7 @@ public class PlatformJumper extends Actor
     private World myWorld;
     int worldHeight;
     int worldWidth;
-
+    public int hundred =0;
     public void addedToWorld(World myWorld)
     {
         this.myWorld = myWorld;
@@ -72,7 +72,7 @@ public class PlatformJumper extends Actor
         frame++;
 
     }
-
+    
     public void animateWalkingRight()
     {
         if(frame == 0) {setImage("Layer 1_runningright1.png");
@@ -113,7 +113,20 @@ public class PlatformJumper extends Actor
         Actor platformToRight = getOneObjectAtOffset(sideWidth+5, 0, Platform.class);
         Actor platformToLeft = getOneObjectAtOffset(-(sideWidth+5), 0, Platform.class);
         if(getY() < 30)
-           Greenfoot.setWorld(new EndGame());
+          {
+                hundred++;
+                
+                Greenfoot.setWorld(new PlatformWorld());
+               
+              if(hundred==100)
+              {
+                  
+                Greenfoot.setWorld(new EndGame());
+            }
+            }
+            
+            
+            
         if(platformBelow == null&&!inTheAir)
         {
             fall();
@@ -159,6 +172,10 @@ public class PlatformJumper extends Actor
 
             image.scale(image.getWidth() +100, image.getHeight()+100);
             setImage(image);
+        }
+         if(Greenfoot.isKeyDown("k"))
+        {
+            Greenfoot.setWorld(new Death());
         }
     }    
 
